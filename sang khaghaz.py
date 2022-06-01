@@ -38,20 +38,24 @@ while True : #(resultsPC < num_of_play) or (resultsUser < num_of_play) :
                 break
         print('your choice is:', choose_of_user_input)
 
-        paper = ['p' , 'paper']
-        scissors = ['s' , 'scissors']
-        rock = ['r' , 'rock']
-        quit = ['q','quit']
+        paper = ['p', 'paper']
+        scissors = ['s', 'scissors']
+        rock = ['r', 'rock']
+        quit = ['q', 'quit']
+        #print(type(choose_of_user_input), type(user_short))
 
-        if choose_of_user_input == paper:
+# nafahmidam chera inha kar nakard va majboor shodam dar nahayat 'p' va 'paper' ra dakhel list bezaram.
+        if choose_of_user_input in paper:
              user_short = 'p'
-        elif choose_of_user_input == rock:
+        elif choose_of_user_input in rock:
              user_short = 'r'
-        elif choose_of_user_input == scissors:
+        elif choose_of_user_input in scissors:
             user_short = 's'
-        elif choose_of_user_input == quit:
+        elif choose_of_user_input in quit:
             user_short = 'q'
-#
+
+        #print(type(choose_of_user_input), type(user_short))
+
         # nafahmidam chera inha kar nakard va majboor shodam dar nahayat 'p' va 'paper' ra dakhel list bezaram.
 
 #       if choose_of_user_input == 'p' or 'paper':
