@@ -102,6 +102,9 @@ print(type(bool1))
 print(bool(0))
 print(bool(1))
 
+print('---------------------------')
+print('---------------------------')
+
 # Strings
 mystr = 'Hello World' # Define string using single quotes
 print(mystr)
@@ -118,6 +121,8 @@ print(len(mystr2))    # Length of string
 print(mystr2[0])    # First character in string "str1"
 print(mystr2[-1])   # Last character in string
 
+print('---------------------------')
+
 
 # String Slicing
 str1 = 'hello'
@@ -132,12 +137,64 @@ print(s3)
 print(s4)
 
 # Iterating through a String
+str1 = 'hello'
 for char in str1:
     print(char)
 print(enumerate(str1))
 print(type(enumerate(str1)))
 print(list(enumerate(str1)))
     # Enumerate method adds a counter to an iterable
+
+print('---------------------------')
+# check String Membership
+mystr1 = 'hello everyone'
+print('hel' in mystr1) #-----TRUE --- SEARCH PART OF IT IS ALSO TRUE
+print('hello' in mystr1)  #----TURE
+
+# String Partitioning :
+    #   The partition() method searches for a specified string and
+    #   splits the string into BEFORE STR, STR , AFTER STR
+str5 = "Natural language and R and Java"
+L = str5.partition("and")
+print(L)
+
+print('-----------------------------')
+## OTHER STRING FUNCTION:
+mystr2= "   *****He HeLLO * each****   "
+a= mystr2.strip()
+print(a)
+print(mystr2.rstrip()) # Removes all whitespaces at the end of the string
+print(mystr2.lstrip()) # Removes all whitespaces at the begining of the string
+print('strip:', mystr2.strip()) # strip() = Removes white space from begining & end
+print('strip *:', mystr2.strip('   *')) # Removes all '*' characters from begining & end of the string
+print('lower:', mystr2.lower()) # Return whole string in lowercase
+print(mystr2.upper()) # Return whole string in uppercase
+print('replace:' , mystr2.replace("He" , "Ho")) #Replace substring "He" with "Ho"
+print('replace * with ' ' :' , mystr2.replace("*" , "")) #Replace substring "He" with "Ho"
+    # در دستور replace هم مثل دستور in عمل میکنه. یعنی عین کلمه را دنبالش نمی گرده. اگر بخشی از کلمه هم مطابقت داشته باش، تغییر میده.
+
+#### نکته : من فکر میکردم خود "متن" بعد از دستور تغییر میکنه. ولی نمی کنه.
+#### یا باید بعد از دستور با "=" به یه متغیر جدید مربوط کنیم یا مستقیم داخل "print" بزاریم.
+
+print('-----------------------------')
+
+mystr5 = "one two Three one two two three"
+print(mystr5.count("one")) # count: count Number of times substring "one" occurred in string.
+
+mylist = mystr5.split() # Split: Split String into substrings in list
+print(mylist)
+
+print('-----------------------------')
+##checking alpha,numeric and ...
+mystr6 = 'abc123456789'
+print(mystr6.isalpha()) # returns True if all the characters in the text are letter
+print(mystr6.isalnum()) # returns True if a string contains only letters or number
+print(mystr6.isdecimal()) # returns True if all the characters are decimals (0-9)
+print(mystr6.isnumeric()) # returns True if all the characters are numeric (0-9
+print(mystr6.isupper()) # Returns True if all the characters are in upper case
+print(mystr6.islower()) # Returns True if all the characters are in lower case
+print(mystr5.rfind("one")) # Returns index of last occurrence of word 'one' in string "str6"
+print(mystr5.rindex("one")) # Returns index of last occurrence of word 'one' in string "str6"
 
 
 
