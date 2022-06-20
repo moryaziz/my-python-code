@@ -83,6 +83,7 @@ city_of_birth('tabriz')
 
 print('-----------------------------')
 
+print('Global and local scope variable')
 # Global and local scope variable
 var1 = 100 # Variable with Global scope.
 def myfunc():
@@ -118,6 +119,134 @@ def myfunc(var2):
 myfunc(20)
 print(var1) # The original value of var1 (100) will be retained and unchanged due to global scope.
     # you cant change the value of Global scope in a function
+
+print('-----------------------------')
+
+list1 = [11,22,33,44,55]
+def myfunc(list1):
+    del list1[0]
+    list1.append(66)
+print('"List1" before calling the function:- ',list1)
+myfunc(list1)   # Pass by reference (Any change in the parameter within the function.
+print('"List1" after calling the function:- ',list1)
+
+list1 = [11,22,33,44,55]
+def myfunc(list1):
+    list1 = [11,100,1000,10000,12] # link of 'list1' with previous object is broken
+print('"List1" before calling the function:- ',list1)
+myfunc(list1) # Pass by reference (Any change in the parameter within the functi
+print('"List1" after calling the function:- ',list1)
+
+### you can del or add member to the list from def (change global list from local scope)
+### but you cant replace all of list with another value.
+
+
+def swap(a,b):
+    temp = a
+    a = b # link of 'a' with previous object is broken now as new object is
+    b = temp # link of 'b' with previous object is broken now as new object is
+    return a,b
+a = 10
+b = 20
+print('a:{} , b:{}'.format(a,b))
+swap(a,b)
+print('swap(10,20):', swap(10,20))
+print('a:{} , b:{} after swap'.format(a,b))
+
+## cant change global scope
+
+print('-----------------------------')
+
+print('****recursive function****')
+print('factoriel')
+def factoriel (n):
+    if n <2:
+        return 1
+    else:
+        return n * factoriel(n-1)
+print(factoriel(5))
+
+def sumof (n):
+    if n == 0:
+        return 0
+    else:
+        return n + sumof(n-1)
+print(sumof(5))
+
+def fibo (n):
+    if n == 0:
+        return 0
+    elif n<3:
+        return 1
+    else:
+        return fibo(n-2) + fibo(n-1)
+for i in range (10):
+    print(fibo(i))
+
+print('-----------------------------')
+print('*args , **kwargs')
+# args & kwargs
+# *args
+    # When we are not sure about the number of arguments being passed to a function then we can use *args as
+            # function parameter. *args allow us to pass the variable number of Non Keyword Arguments to function.
+    # We can simply use an asterisk * before the parameter name to pass variable length arguments.
+    # The arguments are always passed as a tuple.
+    # We can rename it to anything as long as it is preceded by a single asterisk (*).
+        #  It's best practice to keep naming it args to make it immediately recognizable.
+
+# **kwargs
+    # **kwargs allows us to pass the variable number of Keyword Arguments to the function.
+    # We can simply use an double asterisk ** before the parameter name to pass variable length arguments.
+    # The arguments are passed as a dictionary.
+    # We can rename it to anything as long as it is preceded by a double asterisk (**).
+        # It's best practice to keep naming it kwargs to make it immediately recognizable.
+
+def add(a, b, c):
+    return a + b + c
+print(add(10, 20, 30))  # Sum of two numbers
+
+# print(add(1,2,3,4)) '''This will throw below error as this function will only take 3 argument
+# If we want to make argument list dynamic then *args wil come in picture'''
+def add1(*args):
+    return sum(args)
+print(add1(1,2,3))
+print(add1(1,2,3,4)) # *args will take dynamic argument list. So add() function w
+print(add1(1,2,3,4,5))
+print('\n')
+list1=[1,2,3,4,5]
+tuple1=(1,2,3,4,5)
+print(add1(*list1))
+print(add1(*tuple1))
+print(add1(1,2,*list1))
+
+def UserDetails(**kwargs):
+    print(kwargs)
+UserDetails(Name='Asif' , ID=7412 , Pincode=41102 , Age= 33 , Country= 'India')
+
+def UserDetails(**kwargs):
+    for key,val in kwargs.items():
+        print("{} :- {}".format(key,val))
+
+mydict = {'Name': 'Asif', 'ID': 7412, 'Pincode': 41102, 'Age': 33, 'Country': 'India'}
+UserDetails(**mydict)
+print('=========')
+def UserDetails(licenseNo, *args , phoneNo=0 , **kwargs): # Using all four argum
+    print('License No :- ', licenseNo)
+    for i in args:
+        print('Full Name :-',i)
+    print('Phone Number:- ',phoneNo)
+    for key,val in kwargs.items():
+        print("{} :- {}".format(key,val))
+mylist=['ali','reza']
+mydict = {'Name': 'Asif', 'ID': 7412, 'Pincode': 41102, 'Age': 33, 'Country': 'India'}
+
+UserDetails(92354,*mylist,**mydict)
+
+
+
+
+
+
 
 
 
