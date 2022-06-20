@@ -89,12 +89,40 @@ mydict = {1:'one', 2:'two'}
 print(1 in mydict) # Test if a key is in a dictionary or not.
     # Membership test can be only done for keys.
 
+print('---------------------------------------')
 
+# Dictionary Comprehension
+double = {i:i*2 for i in range(10)} #double each value using dict comprehension
+print(double)
 
+key = ['one' , 'two' , 'three' , 'four' , 'five']
+value = [1,2,3,4,5]
+mydict = {k:v for (k,v) in zip(key,value)} # using dict comprehension to create dict
+print(mydict)
+mydict1 = {'a':10 , 'b':20 , 'c':30 , 'd':40 , 'e':50}
+mydict1 = {k:v/10 for (k,v) in mydict1.items()} # Divide all values in a dictionary
+print(mydict1)
 
+print('---------------------------------------')
 
+# Word Frequency using List
+mystr4 = "one two three four one two two three five five six seven six seven one"
+mylist = mystr4.split() # Split String into substrings
+print(type(mylist))
+print(mylist)
+mylist1 = set(mylist) # Unique values in a list
+mylist1 = list(mylist1)
+print(mylist1)
 
-
+# Calculate frequenct of each word
+count1 = [0] * len(mylist1)
+mydict5 = dict()
+for i in range(len(mylist1)):
+    for j in range(len(mylist)):
+        if mylist1[i] == mylist[j]:
+            count1[i] += 1
+    mydict5[mylist1[i]] = count1[i]
+print(mydict5)
 
 
 
