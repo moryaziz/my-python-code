@@ -57,15 +57,21 @@ print(type(a))
 fileobj.seek(0)
 count = 0
 for i in range(5):
+    print(fileobj.readline())
+
+print('----------------')
+
+# Read first 5 lines of a file using readlines()
+fileobj.seek(0)
+count = 0
+for i in fileobj.readlines():
+    if count <= 5:
+        print(i)
+    else :
+        break
+    count += 1
 
 
-
-for i in range(5):
-    if (count < 5):
-        print(fileobj.readline())
- else:
-    break
- count+=1
 
 
 
