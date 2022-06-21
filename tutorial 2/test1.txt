@@ -1,0 +1,17 @@
+Python generators are easy way of creating iterators. It generates values one
+at a time from a given sequence instead of returning the entire sequence at onc
+e.\nIt is a special type of function which returns an iterator object.\nIn a ge
+nerator function, a yield statement is used rather than a return statement.\nTh
+e generator function cannot include the return keyword. If we include it then i
+t will terminate the execution of the function.\nThe difference between yield a
+nd return is that once yield returns a value the function is paused and the con
+trol is transferred to the caller.Local variables and their states are remember
+ed between successive calls. In case of the return statement value is returned
+and the execution of the function is terminated.\nMethods like __iter()__ and _
+_next()__ are implemented automatically in generator function.\nSimple generato
+rs can be easily created using generator expressions. Generator expressions cre
+ate anonymous generator functions like lambda.\nThe syntax for generator expres
+sion is similar to that of a list comprehension but the only difference is squa
+re brackets are replaced with round parentheses. Also list comprehension produc
+es the entire list while the generator expression produces one item at a time w
+hich is more memory efficient than list comprehension.
