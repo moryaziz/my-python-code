@@ -30,7 +30,7 @@ def check_alpha(str):
     return t
 
 print(check_alpha('hello'))
-print(check_alpha('abcdefghijklmnopqrstuvwxyz'))
+print(check_alpha('The quick brown fox jumps over the lazy dog'))
 
 
 

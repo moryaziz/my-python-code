@@ -6,17 +6,56 @@
 #
 #  If the string doesn't contain spaces, print it intact.
 
-s = 'hello        world'
+s = 'hello,        world'
+print(s)
+
+new_s = ''
 for char in s:
-    new_s = ''
     if char != ' ':
         new_s += char
     else:
         continue
+print(new_s)
 
+
+#option #2
+
+s = s.replace(' ','')
 
 print(s)
-print(s.strip())
-print(s.rstrip())
+
+
+#option #3
+
+s= '   hello, world salam    '
+print(s)
+a = s.split()
+print(a)
+new_s = ''
+for i in a:
+    new_s += i
+print(new_s)
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
