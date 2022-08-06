@@ -40,6 +40,6 @@ for y in range(0,-270,-30):
         turtle.penup()
 
 
-
+turtle.write("salam")
 
 turtle.done()

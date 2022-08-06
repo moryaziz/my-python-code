@@ -1,9 +1,10 @@
 
 #List
 
-#1) List is an ordered sequence of items.
-#2) We can have different data types under a list.
-    # E.g we can have integer, float and string items in a same list.
+# 1) List is an ordered sequence of items.
+# 2) We can have different data types under a list.
+    # E.g we can have integer, float and string items in a same list. but it isn't recommended.
+
 
 # List Creation
 list1=[]
@@ -15,11 +16,52 @@ list2 = [1 , 2 , 3] # list member can be updated and changed
 print('list2:', list2)
 print('------------------')
 
+# List method:
+string = 'abcd'
+list1 = [string]
+print(list1) #---->['abcd']
+list2 = list(string) # list method get iterable object and each element will be member of list.
+print(list2) #----->['a', 'b', 'c', 'd']
+
+
+print('------------------')
+
 
 # List Slicing
 list3 = ['one' , 'two' , 'three' , 'four' , 'five' , 'six' , 'seven' , 'eight']
 # [start:stop:step]
 print(list3[1:6:2])
+
+print('------------------')
+
+#**** mutable and immutable: *****
+
+# list is mutable object.
+# mutable object: after set and get id, it cannot be changed
+# and if changes, for saving , we have to pass it to different location(id).
+# we have to consider mutable, in some cases they are much faster.
+a = 5
+b = a
+print('id(a)):',hex(id(a)))
+print('id(b)):',hex(id(b)))
+# address of a and b are equal and point to same address(5).
+a = a + 23
+print('b:',b)
+print('id(a)):',hex(id(a)))
+print('id(b)):',hex(id(b)))
+# amount and address of b , is not changed. but id of 'a' is changed, because numeric is immutable.
+print('------------------')
+a = [5,6]
+b = a # b pointed to 'a'.
+print(hex(id(a)))
+print('id(b)):',hex(id(b)))
+a.append(7)
+print(a)
+print('b:',b) # as 'a' is a list and changes in its constant address, then b is changed because 'a' is changed.
+print('id(a)):',hex(id(a))) # list is mutable. so id of 'a' stay constant.
+
+print('------------------')
+print('\n')
 
 # Add , Remove & Change Items on List
 list3.append('nine') # Add an item to the end of the list
@@ -88,11 +130,12 @@ mystring = "WELCOME"
 mylist = [ i for i in mystring ] # Iterating through a string Using List Comprehensions
 print(mylist)
 # these tow method for List Comprehensions have same results.
+mylist1 = []
 for i in mystring:
-    mylist.append(i)
+    mylist1.append(i)
 print(mylist)
-mylist1 = [ i for i in range(40) if i % 2 == 0]
-print(mylist1)
+mylist2 = [ i for i in range(40) if i % 2 == 0]
+print(mylist2)
 
 
 

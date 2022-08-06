@@ -199,7 +199,7 @@ a1 = html.define_child('child1','i am child111111')
 a2 = html.define_child('child2','',child=(a1,), Property=" -----")
 html.body.add_content('meta','',single=False, child= (a2,), Property="og:site_name" , Content="varzesh3")
 #bodysimple.add_content('meta','salam',single=False, Property="og:site_name" , Content="varzesh3")
-html.display(dump=False,file = 'index')
+#html.display(dump=False,file = 'index')
 
 
 

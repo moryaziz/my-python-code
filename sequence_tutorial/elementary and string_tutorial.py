@@ -5,16 +5,18 @@ from datetime import datetime
 import os
 
 # keyword
-    # Keywords are the reserved words in Python and can't be used as an identifier
+    # Keywords are the reserved words in Python and can't be used as an identifier.
 print(keyword.kwlist)
 print(len(keyword.kwlist))
 
+print('*'*40)
 # identifiers
     # An identifier is a name given to entities like class, functions, variables, etc.
     # It helps to differentiate one entity from another
 
 # val2@ = 35        # Identifier can't use special symbols
 #import = 25        # Keywords can't be used as identifiers
+
  #two way of defining identifier
  # val_of_imo
  # ValOfImo
@@ -28,20 +30,23 @@ print(len(keyword.kwlist))
 # الکی فاصله بزاری ارور میده
     #p1 = 10 + 20  #IndentationError: unexpected indent
 
+print('*'*40)
 
 
 # Statements
     # Instructions that a Python interpreter can execute.
     # single line statements
 p1 = 10 + 20
-print (p1)
+print ('p1:',p1)
     #multi line statements
 p2 = 20  \
     + 40 # there is differece between \ and /
 # \ use for show the next line, dosent mean anything
 p3 = 20 / 40
 print(p2)
-print (p3)
+print ('p3 = 20 / 40 = ',p3)
+
+print('*'*40)
 
 # Docstrings
     #1) Docstrings provide a convenient way of associating documentation with
@@ -54,6 +59,8 @@ def square(num):
 print (square(2))
 # # We can access the Docstring using __doc__ method
 print(square.__doc__)
+
+print('*'*40)
 
 # Variables
 '''
@@ -70,8 +77,9 @@ print(r , type(r) , hex(id(r)))
 q = p
 print(q , type(q) , hex(id(q)))
      # variable q will also point to the same location where p and r are pointing
+     # r,p,q point to the same location that is location of '30'.
 
-# Variable Assigment
+# Variable Assigment # python is dynamic type. it detect type of variable by itself.
 intvar = 10     # Integer variable
 floatvar = 2.57     # Float Variable
 strvar = "Python Language"      # String variable
@@ -94,6 +102,7 @@ print(sys.getsizeof(val1))  # size of integer object in bytes
 print(val1, " is Integer?", isinstance(val1, int)) # is val1 an int? True
 print(val1, " is Integer?", isinstance(val1, float)) # is val1 an int? True
 
+print('*'*40)
 
 # Boolean
     # Boolean data type can have only two possible values true or false.
@@ -116,6 +125,8 @@ mystr2 = 'Woohoo'*5
 print(mystr2)
 
 print(len(mystr2))    # Length of string
+
+print('*'*40)
 
 # String Indexing
 print(mystr2[0])    # First character in string "str1"
@@ -162,7 +173,8 @@ print('-----------------------------')
 ## OTHER STRING FUNCTION:
 mystr2= "   *****He HeLLO * each****   "
 a= mystr2.strip()
-print(a)
+print(mystr2)
+print('mystr2.strip(): ',a)
 print(mystr2.rstrip()) # Removes all whitespaces at the end of the string
 print(mystr2.lstrip()) # Removes all whitespaces at the begining of the string
 print('strip:', mystr2.strip()) # strip() = Removes white space from begining & end
@@ -170,7 +182,7 @@ print('strip *:', mystr2.strip('   *')) # Removes all '*' characters from begini
 print('lower:', mystr2.lower()) # Return whole string in lowercase
 print(mystr2.upper()) # Return whole string in uppercase
 print('replace:' , mystr2.replace("He" , "Ho")) #Replace substring "He" with "Ho"
-print('replace * with ' ' :' , mystr2.replace("*" , "")) #Replace substring "He" with "Ho"
+print('replace * with ' ' :' , mystr2.replace("*" , "")) #Replace substring "*" with ""
     # در دستور replace هم مثل دستور in عمل میکنه. یعنی عین کلمه را دنبالش نمی گرده. اگر بخشی از کلمه هم مطابقت داشته باش، تغییر میده.
 
 #### نکته : من فکر میکردم خود "متن" بعد از دستور تغییر میکنه. ولی نمی کنه.
