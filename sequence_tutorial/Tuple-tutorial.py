@@ -7,12 +7,12 @@ tup1 = (1, 2, 3)
 list1 = [1, 2, 3]
 a = tup1
 b = list1
-print('id(a): {},id(tup1):{}'.format(id(a), id(tup1)))
+print('id(a:tup1): {},id(tup1):{}'.format(id(a), id(tup1)))
 print('id(b): {},id(list1):{}'.format(id(b), id(list1)))
 tup1 = (4, 5)
 list1.append(4)
 print('after append')
-print('id(a): {},id(tup1):{}'.format(id(a), id(tup1)))
+print('id(a): {},id(tup1):{}'.format(id(a), id(tup1))) # tup1 get new address but 'a:tup1' remain unchanged.
 print('id(b): {},id(list1):{}'.format(id(b), id(list1)))
 print('tup1:', tup1)
 print('list1:', list1)
@@ -36,6 +36,13 @@ print(tup5[-1]) # Last item of the tuple)
 mytuple = ('one' , 'two' , 'three' , 'four' , 'five' )
 print(mytuple[0:3]) # Return all items from 0th to 3rd index location excluding the item)
 
+print('-----------------------------------')
+
+# Tuple unpacking
+album = ('homayoon',2003,('nasim','sokoot'))
+artist,year,tracks = album
+print('{},{},{}'.format(artist,year,tracks))
+
 # Remove & Change Items
 # del mytuple[0]
 # Tuples are immutable which means we can't DELETE tuple items
@@ -54,11 +61,11 @@ print(mytuple.count('one')) # Number of times item "one" occurred in the tuple.
 print('-----------------------------------')
 
 # Tuple Membership
-print('one' in mytuple) # Check if 'one' exist in the list
-print('on' in mytuple) # Check if 'one' exist in the list
+print('one' in mytuple) # Check if 'one' exist in the Tuple
+print('on' in mytuple) # Check if 'on' exist in the Tuple
 
 # Sorting
-mytuple2 = (1,2,4,3)
+mytuple2 = (4,2,1,3)
 sorted(mytuple2)
 print('mytuple2:', mytuple2) #immutable so did not change.
 sortedtuple=sorted(mytuple2)
