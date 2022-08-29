@@ -23,7 +23,7 @@ if age >= 18  :
 # the way that upper code is right are a tradition way.
 # when the condition have a right(non-zero) amount, the condition is True.
 
-# false condition : int = 0 , float = 0.0, list = [], dict = {},strings =''
+# false condition : int = 0 , float = 0.0, list and tuple = [], dict = {},strings =''
 # the modern way :
 age = 18
 if age: # age have a amount so = True.
@@ -44,7 +44,7 @@ print(vote)
 # ********* for *********:
 
 # iterable object: something that can be iterated to every element of it.
-# like: list, string, range
+# like: list and tuple, string, range
 
 for i in range(3):
     print(i)

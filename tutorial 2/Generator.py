@@ -11,13 +11,13 @@
 # Methods like iter() and next() are implemented automatically in generator function.
 # Simple generators can be easily created using generator expressions.
 # Generator expressions create anonymous generator functions like lambda.
-# The syntax for generator expression is similar to that of a list comprehension but the only
+# The syntax for generator expression is similar to that of a list and tuple comprehension but the only
 # difference is square brackets are replaced with round parentheses.
-# Also list comprehension [] produces the entire list while the generator expression () produces:
-# one item at a time which is more memory efficient than list comprehension.
+# Also list and tuple comprehension [] produces the entire list and tuple while the generator expression () produces:
+# one item at a time which is more memory efficient than list and tuple comprehension.
 
 # Simple generator function that will generate natural numbers from 1 to 20.
-# before we write like this: we use return and save values in a list
+# before we write like this: we use return and save values in a list and tuple
 def mygen():
     a = list()
     for i in range(1, 20):
@@ -27,7 +27,7 @@ def mygen():
 
 
 my_gen = mygen()
-print('a as list by return=', my_gen)
+print('a as list and tuple by return=', my_gen)
 
 # but when we use yield, we can achieve any value without breaking the loop.
 def mygen1():
@@ -37,12 +37,12 @@ def mygen1():
 a = list()
 for i in mygen1():
     a.append(i)
-print('a as list by yield=', a)
+print('a as list and tuple by yield=', a)
 
-# list and generator comprehension:
+# list and tuple and generator comprehension:
 
 list1 = [i for i in fibo()] # List comprehension
-# this writting method is like get return as list.
+# this writting method is like get return as list and tuple.
 print(list1)
 
 gen1 = (i for i in fibo()) # generator comprehension

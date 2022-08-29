@@ -12,7 +12,7 @@
 # It is used to filter the iterables/sequence as per the conditions.
 # Filter function filters the original iterable and passes the items
         #  that returns True for the function provided to filter.
-# It is normally used with Lambda functions to filter list, tuple, or sets.
+# It is normally used with Lambda functions to filter list and tuple, tuple, or sets.
 # filter() method takes two parameters:
     # function - function tests if elements of an iterable returns true or false
     # iterable - Sequence which needs to be filtered, could be sets, lists, tuples, or any iterators
@@ -21,13 +21,13 @@
     ## filter (lambda n:n%2 ==1 , list1)
 
 # Map
-# The map() function applies a given function to each item of an iterable (list, tuple etc.)
-        # and returns a list of the results.
+# The map() function applies a given function to each item of an iterable (list and tuple, tuple etc.)
+        # and returns a list and tuple of the results.
 # map() function takes two Parameters :
     # function : The function to execute for each item of given iterable.
     # iterable : It is a iterable which is to be mapped.
-# Returns : Returns a list of the results after applying the given function
-        # to each item of a given iterable (list, tuple etc.)
+# Returns : Returns a list and tuple of the results after applying the given function
+        # to each item of a given iterable (list and tuple, tuple etc.)
 
         ## syntax : map ( function , iterable)
         ## map (lambda num : num*2 , list1)
@@ -79,7 +79,7 @@ def add(a, b):
 sum_all = reduce(add, doubles)  # This reduce function will perform sum of all item
 print(sum_all)
 
-#The below reduce() function will perform sum of all items in the list using lambda
+#The below reduce() function will perform sum of all items in the list and tuple using lambda
 sum_all = reduce(lambda a,b : a+b,doubles)
 print(sum_all)
 

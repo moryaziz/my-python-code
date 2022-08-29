@@ -10,6 +10,8 @@
 # Parameter VS Argument
 # A parameter is the variable listed inside the parentheses in the function definition.
 # An argument is the value that is sent to the function when it is called.
+# def adder(a---> parameter)
+# sumof = adder(4----> argument)
 
 # Three types of functions in Python:-
 # Built-in function :- Python predefined functions that are readily available for use
@@ -17,6 +19,10 @@
 # User-Defined Functions:- Function that we define ourselves to perform a specific task.
 # Anonymous functions : Function that is defined without a name.
     # Anonymous functions are also called as lambda functions. They are not declared with the def keyword
+
+# print function: perform 2 job:
+# if it is possible: convert the export to 'str' and print it.
+# if not possible: print the 'temp address' of the function.
 
 def FunctionName (parameters):
     """Function DosString"""
@@ -71,20 +77,28 @@ print(fullname.__doc__)
 fullname(lastname = 'aziz' , middlename='-' , firstname='mory')
     # Keyword Arguments
 
-#fullname (lastname = 'aziz') # This will throw error as function is expecting 3 arguments.
+# fullname (lastname = 'aziz') # This will throw error as function is expecting 3 arguments.
 
 
 # define 'default value' for Function may be useful
 def city_of_birth(city = 'tehran'):
     print('Most Populous City :- ', city)
 
-city_of_birth() # When a function is called without an argument it will use default valu
+city_of_birth() # When a function is called without an argument it will use default value.
 city_of_birth('tabriz')
 
 print('-----------------------------')
 
 print('Global and local scope variable')
-# Global and local scope variable
+
+# ****** Global and local scope variable
+# global scope : the parameter that be defined in the module.
+# local scope : the parameter that be defined in the function.
+# we can't use local variable out of the function.
+# we can use global variable but can't change amount of the global variable in function except when we define it:
+# in the body of function: global ...........
+
+
 var1 = 100 # Variable with Global scope.
 def myfunc():
     print(var1) # Value 100 will be displayed due to global scope of var1
@@ -137,8 +151,8 @@ print('"List1" before calling the function:- ',list1)
 myfunc(list1) # Pass by reference (Any change in the parameter within the functi
 print('"List1" after calling the function:- ',list1)
 
-### you can del or add member to the list from def (change global list from local scope)
-### but you cant replace all of list with another value.
+### you can del or add member to the list and tuple from def (change global list and tuple from local scope)
+### but you cant replace all of list and tuple with another value.
 
 
 def swap(a,b):
@@ -158,6 +172,11 @@ print('a:{} , b:{} after swap'.format(a,b))
 print('-----------------------------')
 
 print('****recursive function****')
+# recursive : use same function in the function.
+# condition: it has to be a condition to end a loop.
+# LIMITS: 1- just 1 parameter allows.  2-memory limits.
+# at all it does not recommended. too slow. ----------------> use generators instead of recursive.
+
 print('factoriel')
 def factoriel (n):
     if n <2:
@@ -184,33 +203,35 @@ for i in range (10):
     print(fibo(i))
 
 print('-----------------------------')
+
+
 print('*args , **kwargs')
 # args & kwargs
 # *args
-    # When we are not sure about the number of arguments being passed to a function then we can use *args as
-            # function parameter. *args allow us to pass the variable number of Non Keyword Arguments to function.
-    # We can simply use an asterisk * before the parameter name to pass variable length arguments.
-    # The arguments are always passed as a tuple.
-    # We can rename it to anything as long as it is preceded by a single asterisk (*).
-        #  It's best practice to keep naming it args to make it immediately recognizable.
+# When we are not sure about the number of arguments being passed to a function then we can use *args as,
+# function parameter. *args allow us to pass the variable number of Non Keyword Arguments to function.
+# We can simply use an asterisk * before the parameter name to pass variable length arguments.
+# The arguments are always passed as a tuple.
+# We can rename it to anything as long as it is preceded by a single asterisk (*).
+#  It's best practice to keep naming it args to make it immediately recognizable.
 
 # **kwargs
-    # **kwargs allows us to pass the variable number of Keyword Arguments to the function.
-    # We can simply use an double asterisk ** before the parameter name to pass variable length arguments.
-    # The arguments are passed as a dictionary.
-    # We can rename it to anything as long as it is preceded by a double asterisk (**).
-        # It's best practice to keep naming it kwargs to make it immediately recognizable.
+# **kwargs allows us to pass the variable number of Keyword Arguments to the function.
+# We can simply use an double asterisk ** before the parameter name to pass variable length arguments.
+# The arguments are passed as a dictionary.
+# We can rename it to anything as long as it is preceded by a double asterisk (**).
+# It's best practice to keep naming it kwargs to make it immediately recognizable.
 
 def add(a, b, c):
     return a + b + c
 print(add(10, 20, 30))  # Sum of two numbers
 
 # print(add(1,2,3,4)) '''This will throw below error as this function will only take 3 argument
-# If we want to make argument list dynamic then *args wil come in picture'''
+# If we want to make argument list and tuple dynamic then *args wil come in picture'''
 def add1(*args):
     return sum(args)
 print(add1(1,2,3))
-print(add1(1,2,3,4)) # *args will take dynamic argument list. So add() function w
+print(add1(1,2,3,4)) # *args will take dynamic argument list and tuple. So add() function w
 print(add1(1,2,3,4,5))
 print('\n')
 list1=[1,2,3,4,5]
@@ -241,6 +262,41 @@ mylist=['ali','reza']
 mydict = {'Name': 'Asif', 'ID': 7412, 'Pincode': 41102, 'Age': 33, 'Country': 'India'}
 
 UserDetails(92354,*mylist,**mydict)
+
+
+# **** __name__:
+
+# assume we have module with some functions in it.( functions print something).
+# then, when we import the module in a file, unintentionally the print methods of module , will run that is undesirable.
+# solution: use __name__ in module body .
+
+#def ......
+# ...
+# ...
+# ...
+# def ....
+# ...
+# if __name__ == '__main':
+#     print(.......)
+
+
+# **** docstring:
+# use for write help for functions.------->  """ ********** """
+# how to access: help(name of function)
+
+# nested function:
+# when we have a function in the function.
+def outer():
+    a= 0
+    def inner():
+        nonlocal a #-------> a is not global, also is not local for inner():
+        # a :  is nonlocal or enclosing for inner().
+        pass
+        inner()  # call inner function inside of outer function.
+
+    # order of checking variable:
+    # 1- local 2- enclosing 3- global 4- builtin
+
 
 
 
