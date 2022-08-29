@@ -44,7 +44,7 @@ while True : #(resultsPC < num_of_play) or (resultsUser < num_of_play) :
         quit = ['q', 'quit']
         #print(type(choose_of_user_input), type(user_short))
 
-# nafahmidam chera inha kar nakard va majboor shodam dar nahayat 'p' va 'paper' ra dakhel list bezaram.
+# nafahmidam chera inha kar nakard va majboor shodam dar nahayat 'p' va 'paper' ra dakhel list and tuple bezaram.
         if choose_of_user_input in paper:
              user_short = 'p'
         elif choose_of_user_input in rock:
@@ -56,7 +56,7 @@ while True : #(resultsPC < num_of_play) or (resultsUser < num_of_play) :
 
         #print(type(choose_of_user_input), type(user_short))
 
-        # nafahmidam chera inha kar nakard va majboor shodam dar nahayat 'p' va 'paper' ra dakhel list bezaram.
+        # nafahmidam chera inha kar nakard va majboor shodam dar nahayat 'p' va 'paper' ra dakhel list and tuple bezaram.
 
 #       if choose_of_user_input == 'p' or 'paper':
 #            user_short = 'q'

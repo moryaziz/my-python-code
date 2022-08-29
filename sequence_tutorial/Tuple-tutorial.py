@@ -2,7 +2,7 @@
 # 1. Tuple is similar to List except that the objects in tuple are immutable which means
 # we cannot change the elements of a tuple once assigned.
 # 2. When we do not want to change the data over time, tuple is a preferred data type.
-# 3. Iterating over the elements of a tuple is faster compared to iterating over a list.
+# 3. Iterating over the elements of a tuple is faster compared to iterating over a list and tuple.
 tup1 = (1, 2, 3)
 list1 = [1, 2, 3]
 a = tup1
@@ -18,8 +18,8 @@ print('tup1:', tup1)
 print('list1:', list1)
 print('a:', a)
 print('b:', b)
-# list in mutable. after updating list, b is also updated.
-# the id of list and b are same and remain unchanged.
+# list and tuple in mutable. after updating list and tuple, b is also updated.
+# the id of list and tuple and b are same and remain unchanged.
 # but tuple is immutable. after updating tup1, 'a' is not updated.
 # also the id of 'tup1' has changed however the id of 'a' remain unchanged.
 

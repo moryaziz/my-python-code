@@ -15,8 +15,8 @@ class Tag(object):
         self.start_tag = '<{}>'.format(name)
         self.content = content
         self.end_tag = '</{}>'.format(name)
-        # we get att like key and value, then convert in to string and append it to a list.
-        # the join the att list to local parametar and add it to start_tag.
+        # we get att like key and value, then convert in to string and append it to a list and tuple.
+        # the join the att list and tuple to local parametar and add it to start_tag.
         self.attributes = list()
         if att:
             for ky in att:
@@ -57,12 +57,12 @@ class DocType(Tag):
 class Head(Tag):
     def __init__(self):
         super().__init__(name='head',content='\n')
-        # name are constant. content is consisted of some tags. so define head_content as list().
+        # name are constant. content is consisted of some tags. so define head_content as list and tuple().
         self.head_content = list()
 
     def add_content(self,name,content,single=False,**att):
         # define def add_content to add new_tags to self.head_content and
-        # at final join self.head_content as list to self.content in display method.
+        # at final join self.head_content as list and tuple to self.content in display method.
         new_tag = Tag(name=name, content=content, **att)
         if single:
             new_tag.content = ''
@@ -81,12 +81,12 @@ class Head(Tag):
 class Body(Tag):
     def __init__(self):
         super().__init__(name='body', content='\n')
-        # name are constant. content is consisted of some tags. so define body_content as list().
+        # name are constant. content is consisted of some tags. so define body_content as list and tuple().
         self.body_content = list()
 
     def add_content(self, name, content, single=False,child=None, **att):
         # define def add_content to add new_tags to self.body_content and
-        # at final join self.body_content as list to self.content in display method.
+        # at final join self.body_content as list and tuple to self.content in display method.
         new_tag = Tag(name=name, content=content, **att)
         if child:
             for ch in child:

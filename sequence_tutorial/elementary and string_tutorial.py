@@ -193,7 +193,7 @@ print('-----------------------------')
 mystr5 = "one two Three one two two three"
 print(mystr5.count("one")) # count: count Number of times substring "one" occurred in string.
 
-mylist = mystr5.split() # Split: Split String into substrings in list
+mylist = mystr5.split() # Split: Split String into substrings in list and tuple
 print(mylist)
 
 print('-----------------------------')

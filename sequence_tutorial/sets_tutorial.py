@@ -52,7 +52,7 @@ print('my set after update:', myset)
 print(myset1)
     # after updating myset, myset1 is also changed.
 
-my_set = myset.copy() # Create a copy of the list
+my_set = myset.copy() # Create a copy of the list and tuple
 print(id(myset) , id(my_set))
     # # The address of my_set will be different from myset because my_set is copy.
 
